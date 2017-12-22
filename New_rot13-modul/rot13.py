@@ -3,7 +3,7 @@
 # реализуйте получение JSON с удаленного хоста и красивый вывод информации на экран. 
 
 
-def rot13(s):
+def rot13(s):   """ сдвиг на нужную позицию (тут на 13) """
     result = ""
 
     for v in s:
@@ -24,7 +24,7 @@ def rot13(s):
     return result
 
 
-def rot13_file(file_name):
+def rot13_file(file_name):   """ Открытие файла в режиме чтения """
     try:
         file = open(file_name, 'r')
     except:
@@ -39,7 +39,7 @@ def rot13_file(file_name):
     finally:
         file.close()
 
-    file = open(file_name, 'w')
+    file = open(file_name, 'w')  """ Запись ответа """
 
     try:
         file.write(rot13(data))
