@@ -4,8 +4,12 @@ from rot13 import rot13
 Этот модуль тестирует функцию шифрования алгоритмом rot13
 """
 
-def test_1():
-    assert rot13("hello") == "uryyb"
+from rot_13 import *
+import pytest
 
-def test_2():
-    assert rot13("uryyb") == "hello"
+@pytest.mark.parametrize("count,expected", [
+  ("hello", "uryyb"),
+  ("uryyb", "hello")])
+
+def test_summ(count,expected):
+	assert(rot13(count) == expected)
